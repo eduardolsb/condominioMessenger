@@ -1,0 +1,872 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>CM - Condominium Messenger</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+    <link href="css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--core-->
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="app/fw/cm.js"></script>
+    <!--model-->
+    <script src="app/model/principal.js"></script>
+    <!--controller-->
+    <script src="app/controller/principal.js"></script>
+    <!--view-->
+    <script src="app/view/principal.js"></script>
+</head>
+
+<body class="fix-header fix-sidebar">
+
+<!-- Preloader - style you can find in spinners.css -->
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+
+
+
+<!-- Main wrapper -->
+<div id="main-wrapper">
+<!-- header header -->
+<div class="header">
+<nav class="navbar top-navbar navbar-expand-md navbar-light">
+    <!-- Logo -->
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <!-- Logo icon -->
+            <b><img src="images/logo.png" alt="homepage" class="dark-logo"/></b>
+            <!--End Logo icon -->
+            <!-- Logo text -->
+            <span><img src="images/logo-text.png" alt="homepage" class="dark-logo" /></span>
+        </a>
+    </div>
+    <!-- End Logo -->
+    <div id="panel-usuario-logado" class="navbar-collapse" style="display: none;">
+        <!-- toggle and nav items -->
+        <ul class="navbar-nav mr-auto mt-md-0">
+            <!-- This is -->
+            <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i id="icon-menu" class="mdi mdi-menu"></i></a> </li>
+            <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+            <!-- Messages
+            <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-send"></i>
+                </a>
+                <div class="dropdown-menu animated zoomIn">
+                    <ul class="mega-dropdown-menu row">
+
+
+                        <li class="col-lg-3  m-b-30">
+                            <h4 class="m-b-20">CONTACT US</h4>
+
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Enter email"> </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-info">Submit</button>
+                            </form>
+                        </li>
+                        <li class="col-lg-3 col-xlg-3 m-b-30">
+                            <h4 class="m-b-20">List style</h4>
+
+                            <ul class="list-style-none">
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-3 col-xlg-3 m-b-30">
+                            <h4 class="m-b-20">List style</h4>
+
+                            <ul class="list-style-none">
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-lg-3 col-xlg-3 m-b-30">
+                            <h4 class="m-b-20">List style</h4>
+
+                            <ul class="list-style-none">
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </li>-->
+            <!-- End Messages -->
+        </ul>
+        <!-- User profile and search -->
+        <ul class="navbar-nav my-lg-0">
+
+            <!-- Search -->
+            <li class="nav-item hidden-sm-down search-box">
+                <!--<a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
+                <form class="app-search">
+                    <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a>
+                </form>-->
+            </li>
+            <!-- Comment -->
+            <li class="nav-item dropdown" id="icon-alert-notificacao" style="display: none;">
+                <a class="nav-link dropdown-toggle text-muted text-muted  " onclick="Management.App.Controller.Principal.setConfig.setNotificacao();" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bell"></i>
+                    <div class="notify">
+                        <span class="heartbit"></span> 
+                        <span class="point"></span> 
+                    </div>
+                </a>
+                <!--<div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                    <ul>
+                        <li>
+                            <div class="drop-title">Notifications</div>
+                        </li>
+                        <li>
+                            <div class="message-center">
+
+                                <a href="#">
+                                    <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
+                                    <div class="mail-contnet">
+                                        <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                    </div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
+                                    <div class="mail-contnet">
+                                        <h5>This is another title</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
+                                    </div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
+                                    <div class="mail-contnet">
+                                        <h5>This is title</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
+                                    </div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
+                                    <div class="mail-contnet">
+                                        <h5>This is another title</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                        </li>
+                    </ul>
+                </div>-->
+            </li>
+            <!-- End Comment -->
+            <!-- Messages
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
+                    <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
+                    <ul>
+                        <li>
+                            <div class="drop-title">You have 4 new messages</div>
+                        </li>
+                        <li>
+                            <div class="message-center">
+
+                                <a href="#">
+                                    <div class="user-img"> <img src="images/users/5.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                    <div class="mail-contnet">
+                                        <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                    </div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="user-img"> <img src="images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                    <div class="mail-contnet">
+                                        <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
+                                    </div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="user-img"> <img src="images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                    <div class="mail-contnet">
+                                        <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
+                                    </div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="user-img"> <img src="images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                    <div class="mail-contnet">
+                                        <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>-->
+            <!-- End Messages -->
+            <!-- Profile -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-muted  " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span id="txt-header-nome">  </span> <img id="img-header-imagem" src="images/users/5.jpg" alt="user" class="profile-pic" />
+                </a>
+                <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                    <ul class="dropdown-user">
+                        <li><a onclick="Management.App.Controller.Principal.setConfig.setConfiguracao();"><i class="ti-settings"></i> Configurações</a></li>
+                        <li><a onclick="Management.LogOut();"><i class="fa fa-power-off"></i> Sair</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+<!-- End header header -->
+<!-- Left Sidebar -->
+<div class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="nav-devider"></li>
+                <li class="nav-label">Menu</li>
+                <li id="menu-adm" style="display: none;">
+                    <a class="has-arrow  " onclick="Management.App.Controller.Principal.setConfig.setAdministracao();" aria-expanded="false"><i class="fa fa-mail-reply-all"></i>
+                        <span class="hide-menu">
+                            Comunicados
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="has-arrow  " onclick="Management.App.Controller.Principal.setConfig.setNotificacao();" aria-expanded="false">
+                        <i class="fa fa-table"></i>
+                        <span class="hide-menu">
+                            Principal
+                        </span>
+                    </a>
+                </li>
+
+                <!--<li> <a class="has-arrow  " aria-expanded="false"><i class="fa fa-envelope"></i>
+                        <span class="hide-menu">
+                                    Mensagens
+                                </span>
+                    </a>
+                    <ul aria-expanded="true" class="collapse">
+                        <li><a onclick="Management.App.Controller.Principal.setConfig.setMsgAdministracao();">Administração</a></li>
+                        <li><a onclick="Management.App.Controller.Principal.setConfig.setMsgMorador();">Moradores</a></li>
+                    </ul>
+                </li>-->
+                <li>
+                    <a class="has-arrow  " onclick="Management.App.Controller.Principal.setConfig.setContatos();" aria-expanded="false"><i class="fa ti-tablet"></i><span class="hide-menu">Contatos</span></a>
+                </li>
+                <li>
+                    <a class="has-arrow  " onclick="Management.App.Controller.Principal.setConfig.setConfiguracao();" aria-expanded="false"><i class="fa ti-settings"></i><span class="hide-menu">Configurações</span></a>
+                </li>
+                <li>
+                    <a class="has-arrow  " onclick="Management.LogOut();" aria-expanded="false"><i class="fa fa-power-off"></i><span class="hide-menu">Sair</span></a>
+                </li>
+
+
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</div>
+<!-- End Left Sidebar -->
+<!-- Page wrapper -->
+<div class="page-wrapper">
+<!-- Bread crumb -->
+<div class="row page-titles" id="panel-principal-condominio">
+    <div class="col-md-5 align-self-center">
+        <h3 id="txt-condominio" class="text-primary"> </h3>
+    </div>
+    <div id="panel-info-usuario" class="col-md-7 align-self-center" style="display: none;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" id="txt-bloco">   </li>
+            <li class="breadcrumb-item active" id="txt-rua">   </li>
+            <li class="breadcrumb-item active" id="txt-casa"> </li>
+            <li class="breadcrumb-item active" id="txt-nome-usuario"> </li>
+        </ol>
+    </div>
+</div>
+<!-- End Bread crumb -->
+<!-- Container fluid -->
+<div class="container-fluid">
+<!-- Start Page Content -->
+    
+<div class="row" id="panel-message-administrativo" style="display: none;">
+        <!-- /# column -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-title">
+                    <h4 class="font-weight-bold" >Comunicados</h4>
+                    <div style="width: 100%; height: auto;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <select id="cb-tipo" style="width: 100%; margin-bottom: 10px;">
+                                        <option value="1">Enviar para todo condomínio</option>
+                                        <option value="2">Enviar para um bloco</option>
+                                        <option value="3">Enviar para uma rua</option>
+                                        <option value="4">Enviar para uma casa</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="cb-condominio" style="width: 100%;">
+                                        <option value="0">Escolha um item</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="recent-meaasge">
+                        <div class="media">
+                            <div class="media-body">
+
+                                <textarea id="txt-paneladm-descricao" style="width: 100%; height: 100px; padding: 5px;" class="radius border-info padded"></textarea>
+                                <input id="btn-paneladm-descricao" type="button" class="button btn-btn text-center" value="Enviar" style="width: 100%; margin-top: 5px;"/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<div class="row" id="panel-contatos" style="display: none;">
+        <!-- /# column -->
+
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-title">
+                    <h4><b>Contatos</b></h4>
+                </div>
+                <div class="media-body">
+                    <input type="text" id="txt-contato-buscar" class="border-0 text" value="" placeholder="Buscar Contatos" style="width: 100%;" />
+                </div>
+                <div class="card-body">
+                    <div class="recent-meaasge" id="lst-contatos">
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<div class="row" id="panel-notificacao" style="display: none;">
+    <!-- /# column -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4 style="width: 100%;"><b style="align-self: flex-start; float: left;">Notificações</b> <span onclick="Management.App.Controller.Principal.pageNotificacao.btnLimpar();" style="align-self: flex-end; float: right;">limpar</span></h4>
+            </div>
+            <div class="card-body">
+                <div class="recent-meaasge" id="lst-notificacao">
+
+
+
+                    <!--<div class="media no-border">
+                        <div class="media-body">
+                            <a onclick="alert('teste');" class="media-heading">Ver todas</a>
+                        </div>
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="row" id="panel-message" style="display: none;">
+    <!-- /# column -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4 class="font-weight-bold" id="txt-panelmsg-nome"></h4>
+                <span id="txt-panelmsg-tipo" style="font-size: 9px;"></span>
+                <div style="width: 100%; height: auto;">
+                    <table>
+                        <tr>
+                            <td> <img alt="" src="images/bloqueio_off.png" id="btn-bloqueio-user" style="width: 80px;"/> </td>
+                            <!--<td> &ensp;&ensp; </td>-->
+                            <td> <img alt="" src="images/limpar_msg.png" id="btn-limpar-msg" style="width: 80px;" /> </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="recent-meaasge">
+                    <div class="media">
+                        <div class="media-body">
+
+                            <textarea id="txt-panelmsg-descricao" style="width: 100%; height: 100px; padding: 5px;" class="radius border-info padded"></textarea>
+                            <input id="btn-panelmsg-descricao" type="button" class="button btn-btn text-center" value="Enviar" style="width: 100%; margin-top: 5px;"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-meaasge" style="height: 200px; overflow-x: hidden; overflow-y: scroll;">
+                <div style="width: 100%; height: auto; padding: 10px;" id="lst-msg">
+
+                    
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--OCULTOS  START-->
+<div class="row" id="panel-msg-administracao" style="display: none;">
+    <!-- /# column -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4>Mensagens Administração</h4>
+            </div>
+            <div class="card-body">
+                <div class="recent-meaasge" id="lst-comunicados">
+                    <div class="media" onclick="alert('teste');">
+                        <div class="media-body">
+                            <h4 class="media-heading">Neo</h4>
+                            <div class="meaasge-date">15 minutos atrás</div>
+                            <input type="button" class="button btn-red" value="Ver nova mensagem"/>
+                        </div>
+                    </div>
+                    <div class="media" onclick="alert('teste');">
+                        <div class="media-body">
+                            <h4 class="media-heading">Neo</h4>
+                            <div class="meaasge-date">15 minutos atrás</div>
+                            <p class="f-s-12">Por favor economizar água. Haverá cortes de 7h até 16h.</p>
+                            <!--<i class="fa fa-send"></i>-->
+                        </div>
+                    </div>
+                    <div class="media" onclick="alert('teste');">
+                        <div class="media-body">
+                            <h4 class="media-heading">Neo</h4>
+                            <div class="meaasge-date">2 dias atrás</div>
+                            <p class="f-s-12">Por favor economizar água. Haverá cortes de 7h até 16h.</p>
+                            <!--<i class="fa fa-send"></i>-->
+                        </div>
+                    </div>
+
+                    <div class="media no-border">
+                        <div class="media-body">
+                            <a onclick="alert('teste');" class="media-heading">Ver todas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="panel-msg-morador" style="display: none;">
+    <!-- /# column -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4>Mensagens Moradores</h4>
+            </div>
+            <div class="card-body">
+                <div class="recent-meaasge" id="lst-mensagens">
+                    <div class="media" onclick="alert('teste');">
+                        <div class="media-left">
+                            <a href="#"><img alt="..." src="images/avatar/1.jpg" class="media-object"></a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Maria</h4>
+                            <div class="meaasge-date">15 minutos atrás</div>
+                            <input type="button" class="button btn-red" value="Ver nova mensagem"/>
+                        </div>
+                    </div>
+
+                    <div class="media" onclick="alert('teste');">
+                        <div class="media-left">
+                            <a href="#"><img alt="..." src="images/avatar/2.jpg" class="media-object"></a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">João</h4>
+                            <div class="meaasge-date">13 minutos atrás</div>
+                            <p class="f-s-12">Bom dia </p>
+                            <!--<i class="fa fa-send"></i>-->
+                        </div>
+                    </div>
+                    <div class="media" onclick="alert('teste');">
+                        <div class="media-left">
+                            <a href="#"><img alt="..." src="images/avatar/3.jpg" class="media-object"></a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Mr. Michael</h4>
+                            <div class="meaasge-date">2 dias atrás</div>
+                            <p class="f-s-12">We like your birthday cake </p>
+                            <!--<i class="fa fa-send"></i>-->
+                        </div>
+                    </div>
+                    <div class="media" onclick="alert('teste');">
+                        <div class="media-left">
+                            <a href="#"><img alt="..." src="images/avatar/2.jpg" class="media-object"></a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Mr. John</h4>
+                            <div class="meaasge-date">2 dias atrás</div>
+                            <p class="f-s-12">Quick service and good serve </p>
+                            <!--<i class="fa fa-send"></i>-->
+                        </div>
+                    </div>
+
+                    <div class="media no-border">
+                        <div class="media-body">
+                            <a onclick="alert('teste');" class="media-heading">Ver todas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--OCULTOS  END-->
+    
+
+
+
+<div class="row" id="panel-configuracoes" style="display: none;">
+    <!-- /# column -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4><b>Configurações</b></h4>
+            </div>
+            <div class="card-body">
+                <div class="recent-meaasge">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img id="img-perfil2-principal" alt="..." src="images/bookingSystem/5.png" class="media-object">
+                            </a>
+                            <hr />
+                            <div id="img-perfil2-principal1" style="width: 35px; height: 35px; background: url(images/bookingSystem/1.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal2" style="width: 35px; height: 35px; background: url(images/bookingSystem/2.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal3" style="width: 35px; height: 35px; background: url(images/bookingSystem/3.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal4" style="width: 35px; height: 35px; background: url(images/bookingSystem/4.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal5" style="width: 35px; height: 35px; background: url(images/bookingSystem/5.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal6" style="width: 35px; height: 35px; background: url(images/bookingSystem/6.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal7" style="width: 35px; height: 35px; background: url(images/bookingSystem/7.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal8" style="width: 35px; height: 35px; background: url(images/bookingSystem/8.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal9" style="width: 35px; height: 35px; background: url(images/bookingSystem/9.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil2-principal10" style="width: 35px; height: 35px; background: url(images/bookingSystem/10.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="media-body">
+                        <br />
+                        <br />
+                        <input id="txt-cad2-nome" type="text" class="border-0 text" maxlength="49" value="" placeholder="Nome"/>
+                        <hr/>
+                        <input id="txt-cad2-sobrenome" type="text" class="border-0 text" maxlength="200" value="" placeholder="Sobrenome"/>
+                        <hr/>
+                        <select id="sl-cad2-bloco" class="border-0" style="width: 100%;">
+                            <option value="0"> Selecione um Bloco</option>
+                        </select>
+                        <br/>
+                        <br/>
+                        <select id="sl-cad2-rua" class="border-0" style="width: 100%;">
+                            <option> Selecione uma Rua</option>
+                        </select>
+                        <br/>
+                        <br/>
+                        <select id="sl-cad2-casa" class="border-0" style="width: 100%;">
+                            <option> Selecione uma Casa</option>
+                        </select>
+                        <br/>
+                        <br/>
+                        <select id="sl-cad2-mensagem" class="border-0" style="width: 100%;">
+                            <option value="1"> Livre p/ moradores</option>
+                            <option value="0"> Bloqueado p/ moradores</option>
+                        </select>
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <div class="media no-border">
+                        <input id="txt-cad2-usuario" readonly="readonly" type="text" maxlength="49" class="border-0 text" style="background: #f0ffff;" value="" placeholder="Usuario (Email)" />
+                    </div>
+                    <hr />
+                    <div class="media no-border">
+                        <input id="txt-cad2-senha" type="password" maxlength="6" class="border-0 text" value="" placeholder="Senha" />
+                    </div>
+                    <hr />
+                    <div class="media no-border">
+                        <input id="txt-cad2-telefone" type="text" maxlength="10" class="border-0 text" value="" placeholder="Telefone" />
+                    </div>
+                    <hr />
+                    <div class="media no-border">
+                        <input id="txt-cad2-celular" type="text" maxlength="11" class="border-0 text" value="" placeholder="Celular" />
+                    </div>
+                    <hr />
+                    <div class="media no-border">
+                        <input id="txt-cad2-imei" readonly="readonly" type="text" maxlength="35" class="border-0 text" style="background: #f0ffff;"  value="" placeholder="IMEI *#06#" />
+                    </div>
+                    <hr />
+                    <div class="media no-border">
+                        <div class="media-body">
+                            <a onclick="Management.App.Controller.Principal.pageCadastro.btnAtualizar();" class="media-heading"><b>Atualizar</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="row" id="panel-cadastro" style="display: none;">
+    <!-- /# column -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4><b>Cadastro</b></h4>
+            </div>
+            <div class="card-body">
+                <div class="recent-meaasge">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img id="img-perfil-principal" alt="..." src="images/bookingSystem/5.png" class="media-object">
+                            </a>
+                            <hr/>
+                            <div id="img-perfil-principal1" style="width: 35px; height: 35px; background: url(images/bookingSystem/1.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal2" style="width: 35px; height: 35px; background: url(images/bookingSystem/2.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal3" style="width: 35px; height: 35px; background: url(images/bookingSystem/3.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal4" style="width: 35px; height: 35px; background: url(images/bookingSystem/4.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal5" style="width: 35px; height: 35px; background: url(images/bookingSystem/5.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal6" style="width: 35px; height: 35px; background: url(images/bookingSystem/6.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal7" style="width: 35px; height: 35px; background: url(images/bookingSystem/7.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal8" style="width: 35px; height: 35px; background: url(images/bookingSystem/8.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal9" style="width: 35px; height: 35px; background: url(images/bookingSystem/9.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+                            <div id="img-perfil-principal10" style="width: 35px; height: 35px; background: url(images/bookingSystem/10.png) center center; background-size: contain; padding: 5px; float: left;"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="media-body">
+                        <br/>
+                        <br />
+                        <input id="txt-cad-nome" type="text" class="border-0 text" maxlength="49" value="" placeholder="Nome"/>
+                        <hr/>
+                        <input id="txt-cad-sobrenome" type="text" class="border-0 text" maxlength="200" value="" placeholder="Sobrenome"/>
+                        <hr/>
+                        <select id="sl-cad-bloco" class="border-0" style="width: 100%;">
+                            <option value="0"> Selecione um Bloco</option>
+                        </select>
+                        <br/>
+                        <br/>
+                        <select id="sl-cad-rua" class="border-0" style="width: 100%;">
+                            <option> Selecione uma Rua</option>
+                        </select>
+                        <br/>
+                        <br/>
+                        <select id="sl-cad-casa" class="border-0" style="width: 100%;">
+                            <option> Selecione uma Casa</option>
+                        </select>
+                        <br/>
+                        <br/>
+                        <select id="sl-cad-mensagem" class="border-0" style="width: 100%;">
+                            <option value="1"> Livre p/ moradores</option>
+                            <option value="0"> Bloqueado p/ moradores</option>
+                        </select>
+                        <br/>
+                        <br />
+                    </div>
+
+                    <div class="media no-border">
+                        <input id="txt-cad-usuario" type="text" maxlength="49" class="border-0 text" value="" placeholder="Usuario (Email)"/>
+                    </div>
+                    <hr/>
+                    <div class="media no-border">
+                        <input id="txt-cad-senha" type="password" maxlength="6" class="border-0 text" value="" placeholder="Senha" />
+                    </div>
+                    <hr/>
+                    <div class="media no-border">
+                        <input id="txt-cad-telefone" type="text" maxlength="10" class="border-0 text" value="" placeholder="Telefone" />
+                    </div>
+                    <hr />
+                    <div class="media no-border">
+                        <input id="txt-cad-celular" type="text" maxlength="11" class="border-0 text" value="" placeholder="Celular" />
+                    </div>
+                    <hr/>
+                    <div class="media no-border">
+                        <input id="txt-cad-imei" type="text" maxlength="35" class="border-0 text" value="" placeholder="IMEI *#06#" />
+                    </div>
+                    <hr />
+                    <div class="media no-border">
+                        <div class="media-body">
+                            <a onclick="Management.App.Controller.Principal.pageCadastro.btnSalvar();" class="media-heading"><b>Salvar</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a onclick="Management.App.Controller.Principal.setConfig.setLogin();" class="media-heading"><b>Realizar Login</b></a>
+    </div>
+</div>
+
+
+
+
+
+<div class="row" id="panel-login" style="display: none;">
+        <!-- /# column -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="recent-meaasge">
+                        <div class="media">
+                            <div class="media-body">
+                                <input id="txt-login-usuario" type="text" maxlength="49" class="border-0 text" value="" placeholder="Email"/>
+                                <hr/>
+                                <input id="txt-login-senha" type="password" maxlength="6" class="border-0 text" value="" placeholder="Senha"/>
+                            </div>
+                        </div>
+
+
+                        <div class="media no-border">
+                            <div class="media-body">
+                                <a onclick="Management.App.Controller.Principal.pageLogin.btnEntrar();" class="media-heading">Entrar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a onclick="Management.App.Controller.Principal.setConfig.setCadastro();" class="media-heading"><b>Registrar Usuario</b></a>
+        </div>
+    </div>
+<!-- End PAge Content -->
+
+
+
+    <div id="alert-message" class="alert alert-info" style="position: fixed; top: 10px; left: 10px; right: 10px; display: none; z-index: 9999; width: 94%; padding:10px;">
+        <p id="txt-title" class="font-weight-bold"></p>
+        <span id="txt-message" style="color: #000;"></span>
+    </div>
+
+
+
+</div>
+<!-- End Container fluid -->
+<!-- footer -->
+<!--<footer class="footer"> ©2018 Desenvolvido por Unydata Tecnologia</footer>-->
+<!-- End footer -->
+</div>
+<!-- End Page wrapper -->
+</div>
+<!-- End Wrapper -->
+<!-- All Jquery -->
+<script src="js/lib/jquery/jquery.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="js/lib/bootstrap/js/popper.min.js"></script>
+<script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="js/jquery.slimscroll.js"></script>
+<!--Menu sidebar -->
+<script src="js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<!--Custom JavaScript -->
+
+
+<!-- Amchart -->
+<script src="js/lib/morris-chart/raphael-min.js"></script>
+<script src="js/lib/morris-chart/morris.js"></script>
+<script src="js/lib/morris-chart/dashboard1-init.js"></script>
+
+
+<script src="js/lib/calendar-2/moment.latest.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/semantic.ui.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/prism.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/pignose.calendar.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/pignose.init.js"></script>
+
+<script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
+<script src="js/lib/owl-carousel/owl.carousel-init.js"></script>
+
+<!-- scripit init-->
+
+<script src="js/scripts.js"></script>
+
+
+
+</body>
+
+</html>

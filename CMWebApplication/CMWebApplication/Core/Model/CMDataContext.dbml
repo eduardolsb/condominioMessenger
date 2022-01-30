@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CM" Class="CMDataContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=CM;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UsuarioBloqueado" Member="UsuarioBloqueados">
+    <Type Name="UsuarioBloqueado">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuarioBloqueado" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Empresa_UsuarioBloqueado" Member="Empresa" ThisKey="IdEmpresa" OtherKey="Id" Type="Empresa" IsForeignKey="true" />
+      <Association Name="Usuario_UsuarioBloqueado" Member="Usuario" ThisKey="IdUsuario" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Usuario_UsuarioBloqueado1" Member="Usuario1" ThisKey="IdUsuarioBloqueado" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bloco" Member="Blocos">
+    <Type Name="Bloco">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Bloco" Member="Bloco1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Bloco_Rua" Member="Ruas" ThisKey="Id" OtherKey="IdBloco" Type="Rua" />
+      <Association Name="Bloco_Usuario" Member="Usuarios" ThisKey="Id" OtherKey="IdBloco" Type="Usuario" />
+      <Association Name="Empresa_Bloco" Member="Empresa" ThisKey="IdEmpresa" OtherKey="Id" Type="Empresa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Casa" Member="Casas">
+    <Type Name="Casa">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdRua" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Numero" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Casa_Usuario" Member="Usuarios" ThisKey="Id" OtherKey="IdCasa" Type="Usuario" />
+      <Association Name="Empresa_Casa" Member="Empresa" ThisKey="IdEmpresa" OtherKey="Id" Type="Empresa" IsForeignKey="true" />
+      <Association Name="Rua_Casa" Member="Rua" ThisKey="IdRua" OtherKey="Id" Type="Rua" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Empresa" Member="Empresas">
+    <Type Name="Empresa">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CNPJ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NomeCondominio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Numero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Empresa_UsuarioBloqueado" Member="UsuarioBloqueados" ThisKey="Id" OtherKey="IdEmpresa" Type="UsuarioBloqueado" />
+      <Association Name="Empresa_Bloco" Member="Blocos" ThisKey="Id" OtherKey="IdEmpresa" Type="Bloco" />
+      <Association Name="Empresa_Casa" Member="Casas" ThisKey="Id" OtherKey="IdEmpresa" Type="Casa" />
+      <Association Name="Empresa_Mensagen" Member="Mensagens" ThisKey="Id" OtherKey="IdEmpresa" Type="Mensagen" />
+      <Association Name="Empresa_Notificacao" Member="Notificacaos" ThisKey="Id" OtherKey="IdEmpresa" Type="Notificacao" />
+      <Association Name="Empresa_Rua" Member="Ruas" ThisKey="Id" OtherKey="IdEmpresa" Type="Rua" />
+      <Association Name="Empresa_SessaoMensagen" Member="SessaoMensagens" ThisKey="Id" OtherKey="IdEmpresa" Type="SessaoMensagen" />
+      <Association Name="Empresa_Usuario" Member="Usuarios" ThisKey="Id" OtherKey="IdEmpresa" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mensagens" Member="Mensagens">
+    <Type Name="Mensagen">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdSessaoMensagens" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuarioDestino" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Arquivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ExtArquivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FlgMensagem" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgComunicado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataRecebimento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataVisualizacao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Empresa_Mensagen" Member="Empresa" ThisKey="IdEmpresa" OtherKey="Id" Type="Empresa" IsForeignKey="true" />
+      <Association Name="SessaoMensagen_Mensagen" Member="SessaoMensagen" ThisKey="IdSessaoMensagens" OtherKey="Id" Type="SessaoMensagen" IsForeignKey="true" />
+      <Association Name="Usuario_Mensagen" Member="Usuario" ThisKey="IdUsuario" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Usuario_Mensagen1" Member="Usuario1" ThisKey="IdUsuarioDestino" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Notificacao" Member="Notificacaos">
+    <Type Name="Notificacao">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuarioDestino" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NomeUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Empresa_Notificacao" Member="Empresa" ThisKey="IdEmpresa" OtherKey="Id" Type="Empresa" IsForeignKey="true" />
+      <Association Name="Usuario_Notificacao" Member="Usuario" ThisKey="IdUsuario" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Usuario_Notificacao1" Member="Usuario1" ThisKey="IdUsuarioDestino" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rua" Member="Ruas">
+    <Type Name="Rua">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdBloco" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Rua" Member="Rua1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Rua_Casa" Member="Casas" ThisKey="Id" OtherKey="IdRua" Type="Casa" />
+      <Association Name="Rua_Usuario" Member="Usuarios" ThisKey="Id" OtherKey="IdRua" Type="Usuario" />
+      <Association Name="Bloco_Rua" Member="Bloco" ThisKey="IdBloco" OtherKey="Id" Type="Bloco" IsForeignKey="true" />
+      <Association Name="Empresa_Rua" Member="Empresa" ThisKey="IdEmpresa" OtherKey="Id" Type="Empresa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SessaoMensagens" Member="SessaoMensagens">
+    <Type Name="SessaoMensagen">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuarioDestino" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="SessaoMensagen_Mensagen" Member="Mensagens" ThisKey="Id" OtherKey="IdSessaoMensagens" Type="Mensagen" />
+      <Association Name="Empresa_SessaoMensagen" Member="Empresa" ThisKey="IdEmpresa" OtherKey="Id" Type="Empresa" IsForeignKey="true" />
+      <Association Name="Usuario_SessaoMensagen" Member="Usuario" ThisKey="IdUsuario" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Usuario_SessaoMensagen1" Member="Usuario1" ThisKey="IdUsuarioDestino" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpresa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SobreNome" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IMEI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FlgPrincipal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdCasa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdRua" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdBloco" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="FlgNotificacaoOn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgChamadaOn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgPrivadoOn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataConectado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FlgAprovado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Usuario_UsuarioBloqueado" Member="UsuarioBloqueados" ThisKey="Id" OtherKey="IdUsuario" Type="UsuarioBloqueado" />
+      <Association Name="Usuario_UsuarioBloqueado1" Member="UsuarioBloqueados1" ThisKey="Id" OtherKey="IdUsuarioBloqueado" Type="UsuarioBloqueado" />
+      <Association Name="Usuario_Mensagen" Member="Mensagens" ThisKey="Id" OtherKey="IdUsuario" Type="Mensagen" />
+      <Association Name="Usuario_Mensagen1" Member="Mensagens1" ThisKey="Id" OtherKey="IdUsuarioDestino" Type="Mensagen" />
+      <Association Name="Usuario_Notificacao" Member="Notificacaos" ThisKey="Id" OtherKey="IdUsuario" Type="Notificacao" />
+      <Association Name="Usuario_Notificacao1" Member="Notificacaos1" ThisKey="Id" OtherKey="IdUsuarioDestino" Type="Notificacao" />
+      <Association Name="Usuario_SessaoMensagen" Member="SessaoMensagens" ThisKey="Id" OtherKey="IdUsuario" Type="SessaoMensagen" />
+      <Association Name="Usuario_SessaoMensagen1" Member="SessaoMensagens1" ThisKey="Id" OtherKey="IdUsuarioDestino" Type="SessaoMensagen" />
+      <Association Name="Bloco_Usuario" Member="Bloco" ThisKey="IdBloco" OtherKey="Id" Type="Bloco" IsForeignKey="true" />
+      <Association Name="Casa_Usuario" Member="Casa" ThisKey="IdCasa" OtherKey="Id" Type="Casa" IsForeignKey="true" />
+      <Association Name="Empresa_Usuario" Member="Empresa" ThisKey="IdEmpresa" OtherKey="Id" Type="Empresa" IsForeignKey="true" />
+      <Association Name="Rua_Usuario" Member="Rua" ThisKey="IdRua" OtherKey="Id" Type="Rua" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,12 @@
+F:\EDUARDOLIRA\PROJETOS\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\bin\CMWebApplication.dll.config
+F:\EDUARDOLIRA\PROJETOS\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\bin\CMWebApplication.dll
+F:\EDUARDOLIRA\PROJETOS\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\bin\CMWebApplication.pdb
+F:\EDUARDOLIRA\PROJETOS\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\obj\Debug\CMWebApplication.csprojResolveAssemblyReference.cache
+F:\EDUARDOLIRA\PROJETOS\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\obj\Debug\CMWebApplication.dll
+F:\EDUARDOLIRA\PROJETOS\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\obj\Debug\CMWebApplication.pdb
+C:\Users\maste\Desktop\UNYDATA\APPLICACAO\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\bin\CMWebApplication.dll.config
+C:\Users\maste\Desktop\UNYDATA\APPLICACAO\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\bin\CMWebApplication.dll
+C:\Users\maste\Desktop\UNYDATA\APPLICACAO\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\bin\CMWebApplication.pdb
+C:\Users\maste\Desktop\UNYDATA\APPLICACAO\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\obj\Debug\CMWebApplication.csprojResolveAssemblyReference.cache
+C:\Users\maste\Desktop\UNYDATA\APPLICACAO\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\obj\Debug\CMWebApplication.dll
+C:\Users\maste\Desktop\UNYDATA\APPLICACAO\CONDOMINIUN-MESSENGER\CMWebApplication\CMWebApplication\obj\Debug\CMWebApplication.pdb
